@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visual Curation Saver Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <h1>Visual Curation Saver</h1>
+      <form>
+        <label>
+          API base URL
+          <input name="apiBaseUrl" placeholder="https://your-app.vercel.app" required>
+        </label>
+        <label>
+          API key
+          <input name="apiKey" type="password" required>
+        </label>
+        <button type="submit">Save settings</button>
+        <p role="status"></p>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

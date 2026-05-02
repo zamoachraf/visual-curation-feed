@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Visual Curation Saver",
+  "description": "Extract images from the current page and save selected visuals to your public feed.",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Save visuals"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html"
+}

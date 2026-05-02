@@ -1,0 +1,157 @@
+#visual-curation-overlay,
+#visual-curation-overlay * {
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#visual-curation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+}
+
+.vcf-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 17, 15, 0.62);
+}
+
+.vcf-panel {
+  position: absolute;
+  inset: 28px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fffdf8;
+  color: #191816;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+.vcf-header,
+.vcf-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid #ded8cf;
+}
+
+.vcf-footer {
+  border-top: 1px solid #ded8cf;
+  border-bottom: 0;
+}
+
+.vcf-header div {
+  display: grid;
+  gap: 2px;
+}
+
+.vcf-header strong {
+  font-size: 18px;
+}
+
+.vcf-header span {
+  color: #68635c;
+  font-size: 13px;
+}
+
+.vcf-icon-button,
+.vcf-save {
+  min-height: 38px;
+  border: 1px solid #ded8cf;
+  border-radius: 7px;
+  background: #fff;
+  color: #191816;
+  cursor: pointer;
+}
+
+.vcf-icon-button {
+  width: 38px;
+  font-size: 20px;
+}
+
+.vcf-save {
+  min-width: 132px;
+  padding: 0 14px;
+  border-color: #006f66;
+  background: #006f66;
+  color: #fff;
+}
+
+.vcf-save:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.vcf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  overflow: auto;
+  padding: 14px;
+}
+
+.vcf-tile {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #ece6dd;
+  padding: 0;
+  cursor: pointer;
+}
+
+.vcf-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vcf-tile span {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(0, 111, 102, 0.92);
+  color: #fff;
+  opacity: 0;
+}
+
+.vcf-tile.is-selected {
+  border-color: #006f66;
+}
+
+.vcf-tile.is-selected span {
+  opacity: 1;
+}
+
+.vcf-footer textarea {
+  width: 100%;
+  min-height: 48px;
+  resize: vertical;
+  border: 1px solid #ded8cf;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.vcf-empty {
+  color: #68635c;
+}
+
+@media (max-width: 700px) {
+  .vcf-panel {
+    inset: 10px;
+  }
+
+  .vcf-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
